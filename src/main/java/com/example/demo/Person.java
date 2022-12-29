@@ -1,5 +1,6 @@
 package com.example.demo;
 import javax.persistence.*;
+import java.util.*;
 
 
 @Entity
@@ -24,5 +25,10 @@ public class Person {
     }
     public void setIdCard (IdCard idCard) {
         this.idCard = idCard;
+    }
+    @OneToMany (mappedBy = "person")
+    private List<Phone> phones = new ArrayList<Phone>();
+    public List<Phone> getPhones () {
+        return phones;
     }
 }
