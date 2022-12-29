@@ -14,4 +14,15 @@ public class Person {
     private String firstName;
     @Column (name = "LAST_NAME")
     private String lastName;
+
+    @OneToOne
+    @JoinColumn(name = "ID_CARD_ID")
+    private IdCard idCard;
+
+    public IdCard getIdCard () {
+        return idCard;
+    }
+    public void setIdCard (IdCard idCard) {
+        this.idCard = idCard;
+    }
 }
